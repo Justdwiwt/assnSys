@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+        "http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+    <constant name="struts.action.extension" value="xhtml,do,action,,">
+    </constant>
+
+    <package name="default" extends="struts-default" namespace="/">
+
+        <action name="login" class="main.RootDataAction" method="login">
+            <result name="success">/pages/main.jsp</result>
+            <result name="error">/pages/error.jsp</result>
+            <result name="input">/pages/login.jsp</result>
+        </action>
+
+        <action name="register" class="main.UserDataAction" method="register">
+            <result name="success">/pages/userAdd.jsp</result>
+        </action>
+
+        <action name="registerOK" class="main.UserDataAction" method="registerOK">
+            <result name="success">/pages/user.jsp</result>
+            <result name="error">/pages/userAdd.jsp</result>
+        </action>
+
+
+        <action name="find_Assn" class="main.AssnDataAction" method="find_Assn">
+            <result name="success">/pages/assn.jsp</result>
+            <result name="error">/pages/main.jsp</result>
+        </action>
+
+        <action name="find" class="main.UserDataAction" method="find">
+            <result name="success">/pages/user.jsp</result>
+            <result name="error">/pages/main.jsp</result>
+        </action>
+
+        <action name="insert" class="main.UserDataAction" method="insert">
+            <result name="success">/pages/userAdd.jsp</result>
+        </action>
+
+        <action name="save" class="main.UserDataAction" method="save">
+            <result name="success" type="redirectAction">find</result>
+            <result name="error">/pages/user.jsp</result>
+            <result name="input">/pages/registerUser.jsp</result>
+        </action>
+
+        <action name="saveAssn" class="main.AssnDataAction" method="saveAssn">
+            <result name="success" type="redirectAction">find_Assn</result>
+            <result name="error">/pages/assn.jsp</result>
+        </action>
+
+        <action name="update" class="main.UserDataAction" method="update">
+            <result name="success">/pages/upUser.jsp</result>
+            <result name="error">/pages/userAdd.jsp</result>
+        </action>
+
+        <action name="updateAssn" class="main.AssnDataAction" method="updateAssn">
+            <result name="success">/pages/upAssn.jsp</result>
+            <result name="error">/pages/assnAdd.jsp</result>
+        </action>
+
+        <action name="delete" class="main.UserDataAction" method="delete">
+            <result name="success" type="redirectAction">find</result>
+            <result name="error">/pages/user.jsp</result>
+        </action>
+
+        <action name="deleteAssn" class="main.AssnDataAction" method="deleteAssn">
+            <result name="success" type="redirectAction">find_Assn</result>
+            <result name="error">/pages/assn.jsp</result>
+        </action>
+
+        <action name="findUser" class="main.UserDataAction" method="findUser">
+            <result name="success">/pages/resultUser.jsp</result>
+            <result name="error">/pages/findUser.jsp</result>
+        </action>
+
+        <action name="findAssn" class="main.AssnDataAction" method="findAssn">
+            <result name="success">/pages/resultAssn.jsp</result>
+            <result name="error">/pages/findAssn.jsp</result>
+        </action>
+
+    </package>
+</struts>

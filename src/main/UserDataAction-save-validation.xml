@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE validators PUBLIC
+        "-//Apache Struts//XWork Validator 1.0.3//EN"
+        "http://struts.apache.org/dtds/xwork-validator-1.0.3.dtd ">
+<validators>
+    <field name="uData.email">
+        <field-validator type="email">
+            <param name="expression"><![CDATA[(\w{6})]]></param>
+            <message>非法邮箱</message>
+        </field-validator>
+    </field>
+    <field name="uData.phone">
+        <field-validator type="stringlength">
+            <param name="minLength">11</param>
+            <param name="minLength">11</param>
+            <message>电话长度必须11位</message>
+        </field-validator>
+    </field>
+</validators>

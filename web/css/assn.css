@@ -1,0 +1,21 @@
+.body {
+    background: url(../img/6.jpg) no-repeat;
+    background-size: 100%;
+}
+
+.table {
+    background: #C8C8C8;
+    opacity: 0.8;
+    border-radius: 15px;
+    align-content: center;
+    text-align: center;
+    border-collapse: collapse;
+    border-color: silver;
+    width: 800px;
+    height: 500px;
+    margin: 0 auto;
+}
+
+tr:nth-child(2n) {
+    background: #74777B;
+}
